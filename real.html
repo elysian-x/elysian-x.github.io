@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Website</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #333;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between; /* Align logo and links */
+            align-items: center;
+        }
+
+        /* Logo Image */
+        .logo img {
+            width: 50px; /* Adjust based on your logo size */
+            height: auto;
+        }
+
+        /* Navigation Links */
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin-left: 10px;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            background-color: #575757;
+        }
+
+        /* Header Section */
+        header {
+            background: url('https://via.placeholder.com/1500x500') no-repeat center center/cover;
+            height: 400px;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        /* Button to Find Event Planner */
+        .find-planner-btn {
+            background-color: #e63946;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .find-planner-btn:hover {
+            background-color: #d62828;
+        }
+
+        section {
+            padding: 40px 20px;
+        }
+
+        .intro, .services, .testimonials {
+            text-align: center;
+        }
+
+        .services .service {
+            display: inline-block;
+            width: 30%;
+            margin: 20px;
+        }
+
+        .service img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+
+/* Adjust for smaller screens (Mobile View) */
+@media (max-width: 768px) {
+    .testimonial-box {
+        width: 90%; /* Take up more space on smaller screens */
+        margin-bottom: 20px;
+    }
+}
+
+
+/* Optional: Adjust font styles for better readability */
+.testimonial-text {
+    font-style: italic;
+}
+
+/* Add spacing between testimonials */
+.testimonial-box:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #575757;
+        }
+        
+/* About Us Section */
+.about-us {
+    padding: 60px 20px;
+    background-color: #f0f4f8; /* Soft light background for a calm feel */
+    color: #333; /* Dark text for better readability */
+}
+
+.about-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center; /* Center the content */
+}
+
+.about-us h2 {
+    font-size: 2.5rem;
+    color: #2a4d6c; /* A deep blue color for the heading */
+    font-family: 'Playfair Display', serif; /* Elegant serif font for a premium feel */
+    margin-bottom: 20px;
+}
+
+.about-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    font-family: 'Roboto', sans-serif; /* Clean sans-serif font for body text */
+    color: #444; /* Darker text color for readability */
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-about {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #e74c3c; /* Bright red button for emphasis */
+    color: white;
+    font-size: 1.1rem;
+    font-family: 'Roboto', sans-serif; /* Matching font for consistency */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effect */
+    margin-top: 20px;
+}
+
+.btn-about:hover {
+    background-color: #c0392b; /* Darker red on hover */
+    transform: translateY(-5px); /* Button slightly raises on hover */
+}
+
+/* Optional: Add responsiveness for mobile devices */
+@media (max-width: 768px) {
+    .about-us {
+        padding: 40px 20px;
+    }
+
+    .about-container {
+        padding: 0 15px;
+    }
+
+    .about-us h2 {
+        font-size: 2rem; /* Smaller font size for mobile */
+    }
+
+    .about-text {
+        font-size: 1rem; /* Smaller font size for mobile */
+    }
+
+    .btn-about {
+        padding: 12px 25px; /* Adjust button size on mobile */
+        font-size: 1rem;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <!-- Logo Image (PNG format) -->
+            <img src="logo.png" alt="Company Logo">
+        </div>
+        <div class="nav-links">
+            <!-- Navigation Links -->
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#events">Events</a>
+            <a href="#contact">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+<header id="home">
+    <h1>Welcome to Our Real Estate Agency</h1>
+    <p>Your Dream Property Awaits</p>
+    <!-- Event Planner Button (now linking to event-planner.html) -->
+    <a href="event-planner.html">
+        <button class="find-planner-btn">Find your Event Planner</button>
+    </a>
+</header>
+
+
+    <!-- About Us Section -->
+<section class="about-us">
+    <div class="about-container">
+        <h2>About Us</h2>
+        <p class="about-text">
+            We are a dedicated real estate agency committed to helping you find your dream home or investment property. With years of experience in the industry, we provide personalized service, expert advice, and a wealth of resources to ensure that your real estate journey is seamless and successful.
+        </p>
+        <p class="about-text">
+            Our team is passionate about understanding your needs and helping you navigate the ever-changing real estate market. Whether you're buying, selling, or renting, we are here to make the process smooth and stress-free.
+        </p>
+        <a href="#contact" class="btn-about">Contact Us</a>
+    </div>
+</section>
+
+
+    <!-- Events Section -->
+    <section id="events" class="services">
+        <h2>Upcoming Events</h2>
+        <p>Join us at our next open house or real estate seminar.</p>
+        <div class="service">
+            <h3>Open House</h3>
+            <p>Join us for an open house at our latest listing.</p>
+        </div>
+        <div class="service">
+            <h3>Real Estate Seminar</h3>
+            <p>Learn about the current trends in real estate.</p>
+        </div>
+    </section>
+
+<!-- Testimonials Section -->
+<section class="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial-container">
+        <div class="testimonial-box">
+            <p class="testimonial-text">"This agency helped us find our dream home. They were professional and attentive throughout the entire process!"</p>
+            <p class="testimonial-credentials">- Jane D., Homeowner</p>
+        </div>
+        <div class="testimonial-box">
+            <p class="testimonial-text">"Amazing service! The team went above and beyond to ensure we got the best deal."</p>
+            <p class="testimonial-credentials">- Mark T., Investor</p>
+        </div>
+        <div class="testimonial-box">
+            <p class="testimonial-text">"I am so happy with the new house! The team was very supportive and helped me every step of the way."</p>
+            <p class="testimonial-credentials">- Sarah L., First-time Buyer</p>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-form">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Real Estate Agency</p>
+        <p><a href="#home">Back to Top</a></p>
+    </footer>
+
+</body>
+</html>
