@@ -3,180 +3,286 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding Planning Services - Event Management</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <title>Eventify</title>
     <style>
-        *{
-            scroll-behavior: smooth;
-        }
-        body {
-            font-family: 'Roboto', sans-serif;
+        /* Global Styles */
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            background-color: #ffffff;
         }
 
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+        }
 
+        /* Navigation Bar */
         nav {
-            position: fixed;
-            width: 100%;
-            top: 0;
-    background-color: #333;
-    padding: 20px 20px;
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
-}
+            background-color: #333;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between; /* Align logo and links */
+            align-items: center;
+        }
 
-.logo img {
-    width: 50px; 
-    height: auto;
-}
+        /* Logo Image */
+        .logo img {
+            width: 50px; /* Adjust based on your logo size */
+            height: auto;
+        }
 
+        /* Navigation Links */
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin-left: 10px;
+            font-size: 16px;
+        }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    margin-left: 10px;
-    font-size: 16px;
-}
+        nav a:hover {
+            background-color: #575757;
+        }
 
-nav a:hover {
-    background-color: #575757;
-}
+        /* Header Section */
         header {
-            background: url('wedding-header.jpg') no-repeat center center/cover;
-            color: #D4AF37;
-            padding: 100px 0;
+            background: url('https://via.placeholder.com/1500x500') no-repeat center center/cover;
+            height: 400px;
+            color: white;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
+
         header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5em;
+            font-size: 3rem;
+            margin-bottom: 20px;
         }
+
+        header h2 {
+            font-size: 3rem;
+            margin-bottom: 20px      
+        }
+
         header p {
-            font-size: 1.3em;
+            font-size: 1.2rem;
             margin-top: 10px;
-            padding-bottom: 10px;
         }
-        .cta-button {
-            background-color: #aca64c;
+
+        /* Button to Find Event Planner */
+        .find-planner-btn {
+            background-color: #e63946;
             color: white;
             padding: 15px 30px;
-            border: none;
+            font-size: 18px;
             text-transform: uppercase;
-            font-weight: bold;
-            font-size: 1.1em;
+            border: none;
+            border-radius: 5px;
             cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
             margin-top: 20px;
-            text-decoration: none;
         }
-        .cta-button:hover {
-            background-color: #908512;
+
+        .find-planner-btn:hover {
+            background-color: #d62828;
         }
-        .section-title {
+
+        section {
+            padding: 40px 20px;
+        }
+
+        .intro, .services, .testimonials {
             text-align: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5em;
-            margin: 40px 0 20px;
         }
-        .services, .testimonials, .portfolio, .packages {
+
+        .services .service {
+            display: inline-block;
+            width: 30%;
+            margin: 20px;
+        }
+
+        .service img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+
+/* Adjust for smaller screens (Mobile View) */
+@media (max-width: 768px) {
+    .testimonial-box {
+        width: 90%; /* Take up more space on smaller screens */
+        margin-bottom: 20px;
+    }
+}
+
+ /* Testimonials Section */
+ .testimonials {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .testimonial-container {
             display: flex;
             justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
-            margin: 40px 0;
         }
-        .service-box, .testimonial-box, .package-box {
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+        .testimonial-box {
+            background: #f8f8f8;
             padding: 20px;
-            width: 280px;
-            text-align: center;
             border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            min-width: 280px;
         }
-        .service-box img, .testimonial-box img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-        .service-box h3, .package-box h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8em;
-            margin: 10px 0;
-        }
-        .service-box p, .package-box p {
-            font-size: 1.1em;
-            margin: 10px 0;
-        }
-        .testimonials blockquote {
+
+        .testimonial-text {
             font-style: italic;
-            color: #777;
-            font-size: 1.1em;
         }
-        .portfolio img {
-            border-radius: 8px;
-            margin: 10px 0;
-        }
-        .contact-form {
-            background-color: #fff;
-            padding: 40px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            margin: 40px auto;
-            width: 50%;
-            border-radius: 8px;
-        }
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border-radius: 8px;
-            border: 1px solid #ddd;
-            font-size: 1.1em;
-        }
-        .contact-form button {
-            background-color: #f1c6b4;
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            text-transform: uppercase;
+
+        .testimonial-credentials {
             font-weight: bold;
-            font-size: 1.1em;
-            cursor: pointer;
-            width: 100%;
+            margin-top: 10px;
         }
-        .contact-form button:hover {
-            background-color: #e8a87c;
-        }
+
+/* Optional: Adjust font styles for better readability */
+.testimonial-text {
+    font-style: italic;
+}
+
+/* Add spacing between testimonials */
+.testimonial-box:not(:last-child) {
+    margin-bottom: 30px;
+}
+
         footer {
             background-color: #333;
             color: white;
             text-align: center;
             padding: 20px;
         }
+
         footer a {
-            color: white;
+            color: #fff;
             text-decoration: none;
-            padding: 0 10px;
         }
+
         footer a:hover {
             text-decoration: underline;
         }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #575757;
+        }
+        
+ /* About Us Section */
+ .about-us {
+            padding: 60px 20px;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+
+        .about-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-us h2 {
+            font-size: 2.5rem;
+            color: #2a4d6c;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 20px;
+        }
+
+        .about-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            font-family: 'Merriweather', serif;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .btn-about {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #e74c3c;
+            color: white;
+            font-size: 1.1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .btn-about:hover {
+            background-color: #c0392b;
+            transform: translateY(-5px);
+        }
+
+/* Optional: Add responsiveness for mobile devices */
+@media (max-width: 768px) {
+    .about-us {
+        padding: 40px 20px;
+    }
+
+    .about-container {
+        padding: 0 15px;
+    }
+
+    .about-us h2 {
+        font-size: 2rem; /* Smaller font size for mobile */
+    }
+
+    .about-text {
+        font-size: 1rem; /* Smaller font size for mobile */
+    }
+
+    .btn-about {
+        padding: 12px 25px; /* Adjust button size on mobile */
+        font-size: 1rem;
+    }
+}
+
     </style>
 </head>
 <body>
 
+    <!-- Navigation Bar -->
     <nav>
         <div class="logo">
             <!-- Logo Image (PNG format) -->
-            <img src="logo.png" alt="Eventify">
+            <img src="logo.png" alt="Company Logo">
         </div>
         <div class="nav-links">
             <!-- Navigation Links -->
             <a href="#home">Home</a>
-            <a href="#about">About</a>
+            <a href="about.html">About</a>
             <a href="#events">Events</a>
             <a href="#contact">Contact Us</a>
             <a href="#meetthedev">Meet the Team</a>
@@ -184,94 +290,75 @@ nav a:hover {
         </div>
     </nav>
 
-<header>
-    <h1>Expert Wedding Planning Services</h1>
-    <p>Making Your Dream Wedding a Reality</p>
-    <a href="#contact" class="cta-button">Get In Touch</a>
+    <!-- Header Section -->
+<header id="home">
+    <h1>Welcome to Our Event Agency</h1>
+    <p>Your Dream Event, Our Execution </p>
+    <!-- Event Planner Button (now linking to event-planner.html) -->
+    <a href="event-planner.html">
+        <button class="find-planner-btn">Find your Event Planner</button>
+    </a>
 </header>
 
-<section>
-    <h2 class="section-title">What We Offer</h2>
-    <div class="services">
-        <div class="service-box">
-            <img src="assets/venue.jpg" alt="Venue Selection">
-            <h3>Venue Selection</h3>
-            <p>Choosing the perfect venue based on your style and guest list.</p>
+
+   <!-- About Us Section -->
+   <section class="about-us">
+    <div class="about-container">
+        <h2>About Us</h2>
+        <p class="about-text">
+            Welcome to <strong>Eventify</strong>, where dreams meet precision, and celebrations become timeless memories. 
+            We are more than just an event agency; we are storytellers, weaving unforgettable experiences tailored to your vision.
+        </p>
+        <p class="about-text">
+            Our passionate team of planners, designers, and coordinators bring creativity and meticulous attention to detail
+            to every occasion—whether it’s an intimate gathering or a grand corporate event. With years of experience and
+            an unyielding commitment to excellence, we transform your ideas into extraordinary moments.
+        </p>
+        <p class="about-text">
+            At <strong>Eventify</strong>, we believe that every event is unique, just like the people behind it. Let us take care of the complexities
+            while you savor every second of your special day. Because here, your vision is our mission.
+        </p>
+        <a href="#contact" class="btn-about">Get in Touch</a>
+    </div>
+</section>
+
+
+<!-- Testimonials Section -->
+<section class="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial-container">
+        <div class="testimonial-box">
+            <p class="testimonial-text">"This agency helped us find our dream home. They were professional and attentive throughout the entire process!"</p>
+            <p class="testimonial-credentials">- Jane D., Homeowner</p>
         </div>
-        <div class="service-box">
-            <img src="assets/theme.jpg" alt="Decor and Theme Design">
-            <h3>Decor & Theme Design</h3>
-            <p>Designing a personalized theme that reflects your style.</p>
+        <div class="testimonial-box">
+            <p class="testimonial-text">"Amazing service! The team went above and beyond to ensure we got the best deal."</p>
+            <p class="testimonial-credentials">- Mark T., Investor</p>
         </div>
-        <div class="service-box">
-            <img src="assets/vender.jpg" alt="Vendor Coordination">
-            <h3>Vendor Coordination</h3>
-            <p>Liaising with top-tier vendors for catering, photography, and more.</p>
-        </div>
-        <div class="service-box">
-            <img src="assets/cordi.jpg" alt="On-the-Day Coordination">
-            <h3>On-the-Day Coordination</h3>
-            <p>Ensuring everything runs smoothly on your big day.</p>
+        <div class="testimonial-box">
+            <p class="testimonial-text">"I am so happy with the new house! The team was very supportive and helped me every step of the way."</p>
+            <p class="testimonial-credentials">- Sarah L., First-time Buyer</p>
         </div>
     </div>
 </section>
 
-<section>
-    <h2 class="section-title">Why Our Clients Love Us</h2>
-    <div class="testimonials">
-        <blockquote>"They made our wedding day magical! The attention to detail was unmatched."</blockquote>
-        <blockquote>"The entire event was perfectly executed. We couldn’t have asked for a better planner."</blockquote>
-        <blockquote>"A seamless experience from start to finish! The team made our vision come to life."</blockquote>
-    </div>
-</section>
 
-<section>
-    <h2 class="section-title">Our Wedding Portfolio</h2>
-    <div class="portfolio">
-        <img src="assets/portfolio1.jpg" alt="Wedding 1">
-        <img src="assets/portfolio2.jpg" alt="Wedding 2">
-        <img src="assets/portfolio3.jpg" alt="Wedding 3">
-        <img src="assets/portfolio4.jpg" alt="Wedding 4">
-    </div>
-</section>
-
-<section>
-    <h2 class="section-title">Wedding Planning Packages</h2>
-    <div class="packages">
-        <div class="package-box">
-            <h3>Basic Package</h3>
-            <p>Venue Selection + Vendor Coordination</p>
-        </div>
-        <div class="package-box">
-            <h3>Standard Package</h3>
-            <p>Basic Package + On-the-Day Coordination</p>
-        </div>
-        <div class="package-box">
-            <h3>Premium Package</h3>
-            <p>All-Inclusive - Custom Design + Full Planning Services</p>
-        </div>
-    </div>
-</section>
-
-<section id="contact">
-    <h2 class="section-title">Ready to Plan Your Wedding?</h2>
-    <p>We'd love to hear about your vision for the big day!</p>
-    <div class="contact-form">
-        <form action="#">
-            <input type="text" name="name" placeholder="Full Name" required>
-            <input type="email" name="email" placeholder="Email Address" required>
-            <input type="tel" name="phone" placeholder="Phone Number" required>
-            <input type="date" name="wedding-date" required>
-            <textarea name="message" rows="4" placeholder="Additional Details" required></textarea>
-            <button type="submit">Submit Inquiry</button>
+    <!-- Contact Section -->
+    <section id="contact" class="contact-form">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Submit</button>
         </form>
-    </div>
-</section>
+    </section>
 
-<footer>
-    <p>&copy; 2025 Wedding Planner. All rights reserved.</p>
-    <a href="#">About Us</a> | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a>
-</footer>
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Eventify </p>
+        <p><a href="#home">Back to Top</a></p>
+    </footer>
 
 </body>
 </html>
