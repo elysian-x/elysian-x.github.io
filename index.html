@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real Estate Website</title>
+    <title>Eventify</title>
     <style>
         /* Global Styles */
         * {
@@ -119,6 +119,36 @@
     }
 }
 
+ /* Testimonials Section */
+ .testimonials {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .testimonial-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .testimonial-box {
+            background: #f8f8f8;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            min-width: 280px;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+        }
+
+        .testimonial-credentials {
+            font-weight: bold;
+            margin-top: 10px;
+        }
 
 /* Optional: Adjust font styles for better readability */
 .testimonial-text {
@@ -171,54 +201,49 @@
             background-color: #575757;
         }
         
-/* About Us Section */
-.about-us {
-    padding: 60px 20px;
-    background-color: #f0f4f8; /* Soft light background for a calm feel */
-    color: #333; /* Dark text for better readability */
-}
+ /* About Us Section */
+ .about-us {
+            padding: 60px 20px;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
 
-.about-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    text-align: center; /* Center the content */
-}
+        .about-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-.about-us h2 {
-    font-size: 2.5rem;
-    color: #2a4d6c; /* A deep blue color for the heading */
-    font-family: 'Playfair Display', serif; /* Elegant serif font for a premium feel */
-    margin-bottom: 20px;
-}
+        .about-us h2 {
+            font-size: 2.5rem;
+            color: #2a4d6c;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 20px;
+        }
 
-.about-text {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    font-family: 'Roboto', sans-serif; /* Clean sans-serif font for body text */
-    color: #444; /* Darker text color for readability */
-    margin-bottom: 20px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
+        .about-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            font-family: 'Merriweather', serif;
+            color: #444;
+            margin-bottom: 20px;
+        }
 
-.btn-about {
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: #e74c3c; /* Bright red button for emphasis */
-    color: white;
-    font-size: 1.1rem;
-    font-family: 'Roboto', sans-serif; /* Matching font for consistency */
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effect */
-    margin-top: 20px;
-}
+        .btn-about {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #e74c3c;
+            color: white;
+            font-size: 1.1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 20px;
+        }
 
-.btn-about:hover {
-    background-color: #c0392b; /* Darker red on hover */
-    transform: translateY(-5px); /* Button slightly raises on hover */
-}
+        .btn-about:hover {
+            background-color: #c0392b;
+            transform: translateY(-5px);
+        }
 
 /* Optional: Add responsiveness for mobile devices */
 @media (max-width: 768px) {
@@ -276,46 +301,27 @@
 </header>
 
 
-    <!-- About Us Section -->
-<section class="about-us">
+   <!-- About Us Section -->
+   <section class="about-us">
     <div class="about-container">
         <h2>About Us</h2>
         <p class="about-text">
-Welcome to Eventify – your go-to platform for discovering, connecting, and managing events.
-Whether you're looking to attend an exciting conference, an unforgettable wedding, or a
-professional networking event, we bring all kinds of events to your fingertips.        </p>
+            Welcome to <strong>Eventify</strong>, where dreams meet precision, and celebrations become timeless memories. 
+            We are more than just an event agency; we are storytellers, weaving unforgettable experiences tailored to your vision.
+        </p>
         <p class="about-text">
-At Eventify , we strive to simplify the event discovery process by offering a comprehensive
-overview of events happening around you or online. We believe in connecting people with
-experiences that matter most, and we provide event organizers with the tools they need to
-efficiently plan, promote, and execute seamless events.        </p>
-                <h1>About Us</h1>
-     <p>Welcome to <strong>Eventify</strong>, your go-to partner for all your event planning needs. We specialize in creating memorable events tailored to your unique requirements.</p>
-    
-    <h2>Our Team</h2>
-    <p>Our team of experienced event planners, designers, and coordinators is passionate about making every event a success. We believe in the power of attention to detail, creativity, and flawless execution.</p>
-    
-    <h2>Our Mission</h2>
-    <p>We aim to deliver exceptional event experiences that leave a lasting impression. Whether it’s a wedding, corporate event, or a personal celebration, we are committed to creating moments that exceed expectations.</p>
-    
-        <a href="#contact" class="btn-about">Contact Us</a>
+            Our passionate team of planners, designers, and coordinators bring creativity and meticulous attention to detail
+            to every occasion—whether it’s an intimate gathering or a grand corporate event. With years of experience and
+            an unyielding commitment to excellence, we transform your ideas into extraordinary moments.
+        </p>
+        <p class="about-text">
+            At <strong>Eventify</strong>, we believe that every event is unique, just like the people behind it. Let us take care of the complexities
+            while you savor every second of your special day. Because here, your vision is our mission.
+        </p>
+        <a href="#contact" class="btn-about">Get in Touch</a>
     </div>
 </section>
 
-
-    <!-- Events Section -->
-    <section id="events" class="services">
-        <h2>Upcoming Events</h2>
-        <p>Join us at our next open house or real estate seminar.</p>
-        <div class="service">
-            <h3>Open House</h3>
-            <p>Join us for an open house at our latest listing.</p>
-        </div>
-        <div class="service">
-            <h3>Real Estate Seminar</h3>
-            <p>Learn about the current trends in real estate.</p>
-        </div>
-    </section>
 
 <!-- Testimonials Section -->
 <section class="testimonials">
@@ -350,7 +356,7 @@ efficiently plan, promote, and execute seamless events.        </p>
 
     <!-- Footer Section -->
     <footer>
-        <p>&copy; 2025 Real Estate Agency</p>
+        <p>&copy; 2025 Eventify </p>
         <p><a href="#home">Back to Top</a></p>
     </footer>
 
