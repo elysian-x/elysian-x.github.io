@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Planning Services - Event Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        *{
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #ffffff;
+        }
+
+
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+    background-color: #333;
+    padding: 20px 20px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.logo img {
+    width: 50px; 
+    height: auto;
+}
+
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+nav a:hover {
+    background-color: #575757;
+}
+        header {
+            background: url('wedding-header.jpg') no-repeat center center/cover;
+            color: #D4AF37;
+            padding: 100px 0;
+            text-align: center;
+        }
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5em;
+        }
+        header p {
+            font-size: 1.3em;
+            margin-top: 10px;
+            padding-bottom: 10px;
+        }
+        .cta-button {
+            background-color: #aca64c;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 1.1em;
+            cursor: pointer;
+            margin-top: 20px;
+            text-decoration: none;
+        }
+        .cta-button:hover {
+            background-color: #908512;
+        }
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            margin: 40px 0 20px;
+        }
+        .services, .testimonials, .portfolio, .packages {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+        .service-box, .testimonial-box, .package-box {
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 280px;
+            text-align: center;
+            border-radius: 8px;
+        }
+        .service-box img, .testimonial-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .service-box h3, .package-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8em;
+            margin: 10px 0;
+        }
+        .service-box p, .package-box p {
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+        .testimonials blockquote {
+            font-style: italic;
+            color: #777;
+            font-size: 1.1em;
+        }
+        .portfolio img {
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        .contact-form {
+            background-color: #fff;
+            padding: 40px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            margin: 40px auto;
+            width: 50%;
+            border-radius: 8px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 1.1em;
+        }
+        .contact-form button {
+            background-color: #f1c6b4;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 1.1em;
+            cursor: pointer;
+            width: 100%;
+        }
+        .contact-form button:hover {
+            background-color: #e8a87c;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+            padding: 0 10px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <!-- Logo Image (PNG format) -->
+            <img src="logo.png" alt="Eventify">
+        </div>
+        <div class="nav-links">
+            <!-- Navigation Links -->
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#events">Events</a>
+            <a href="#contact">Contact Us</a>
+            <a href="#meetthedev">Meet the Team</a>
+            
+        </div>
+    </nav>
+
+<header>
+    <h1>Expert Wedding Planning Services</h1>
+    <p>Making Your Dream Wedding a Reality</p>
+    <a href="#contact" class="cta-button">Get In Touch</a>
+</header>
+
+<section>
+    <h2 class="section-title">What We Offer</h2>
+    <div class="services">
+        <div class="service-box">
+            <img src="venue.jpg" alt="Venue Selection">
+            <h3>Venue Selection</h3>
+            <p>Choosing the perfect venue based on your style and guest list.</p>
+        </div>
+        <div class="service-box">
+            <img src="theme.jpg" alt="Decor and Theme Design">
+            <h3>Decor & Theme Design</h3>
+            <p>Designing a personalized theme that reflects your style.</p>
+        </div>
+        <div class="service-box">
+            <img src="vender.jpg" alt="Vendor Coordination">
+            <h3>Vendor Coordination</h3>
+            <p>Liaising with top-tier vendors for catering, photography, and more.</p>
+        </div>
+        <div class="service-box">
+            <img src="cordi.jpg" alt="On-the-Day Coordination">
+            <h3>On-the-Day Coordination</h3>
+            <p>Ensuring everything runs smoothly on your big day.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2 class="section-title">Why Our Clients Love Us</h2>
+    <div class="testimonials">
+        <blockquote>"They made our wedding day magical! The attention to detail was unmatched."</blockquote>
+        <blockquote>"The entire event was perfectly executed. We couldn’t have asked for a better planner."</blockquote>
+        <blockquote>"A seamless experience from start to finish! The team made our vision come to life."</blockquote>
+    </div>
+</section>
+
+<section>
+    <h2 class="section-title">Our Wedding Portfolio</h2>
+    <div class="portfolio">
+        <img src="portfolio1.jpg" alt="Wedding 1">
+        <img src="portfolio2.jpg" alt="Wedding 2">
+        <img src="portfolio3.jpg" alt="Wedding 3">
+        <img src="portfolio4.jpg" alt="Wedding 4">
+    </div>
+</section>
+
+<section>
+    <h2 class="section-title">Wedding Planning Packages</h2>
+    <div class="packages">
+        <div class="package-box">
+            <h3>Basic Package</h3>
+            <p>Venue Selection + Vendor Coordination</p>
+        </div>
+        <div class="package-box">
+            <h3>Standard Package</h3>
+            <p>Basic Package + On-the-Day Coordination</p>
+        </div>
+        <div class="package-box">
+            <h3>Premium Package</h3>
+            <p>All-Inclusive - Custom Design + Full Planning Services</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2 class="section-title">Ready to Plan Your Wedding?</h2>
+    <p>We'd love to hear about your vision for the big day!</p>
+    <div class="contact-form">
+        <form action="#">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <input type="date" name="wedding-date" required>
+            <textarea name="message" rows="4" placeholder="Additional Details" required></textarea>
+            <button type="submit">Submit Inquiry</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Wedding Planner. All rights reserved.</p>
+    <a href="#">About Us</a> | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a>
+</footer>
+
+</body>
+</html>
