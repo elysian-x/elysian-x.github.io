@@ -3,9 +3,335 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Birthday Planning Services - Event Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        *{
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #ffffff;
+        }
+
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background-color: #6b7a8f;
+            padding: 20px 20px;
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+        }
+
+        .logo img {
+            width: 50px; 
+            height: auto;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin-left: 10px;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            background-color: #556277;
+        }
+        
+        header {
+            background: url('birthday-header.jpg') no-repeat center center/cover;
+            color: #ffffff;
+            padding: 100px 0;
+            text-align: center;
+            margin-top: 60px;
+            position: relative;
+        }
+        
+        /* Add an overlay to make text more visible */
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        
+        header h1, header p, header .cta-button {
+            position: relative;
+            z-index: 2;
+        }
+        
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            color: #ffffff;
+        }
+        
+        header p {
+            font-size: 1.3em;
+            margin-top: 10px;
+            padding-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            color: #ffffff;
+        }
+        
+        .cta-button {
+            background-color: #f7882f;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 1.1em;
+            cursor: pointer;
+            margin-top: 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        
+        .cta-button:hover {
+            background-color: #e67e22;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            margin: 40px 0 20px;
+            color: #6b7a8f;
+        }
+        
+        .services, .testimonials, .portfolio, .packages {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+        
+        .service-box, .testimonial-box, .package-box {
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 280px;
+            text-align: center;
+            border-radius: 8px;
+        }
+        
+        .service-box img, .testimonial-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        
+        .service-box h3, .package-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8em;
+            margin: 10px 0;
+            color: #6b7a8f;
+        }
+        
+        .service-box p, .package-box p {
+            font-size: 1.1em;
+            margin: 10px 0;
+            color: #444;
+        }
+        
+        .testimonials blockquote {
+            font-style: italic;
+            color: #444;
+            font-size: 1.1em;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 10px;
+            width: 280px;
+            border-left: 4px solid #f7882f;
+        }
+        
+        .portfolio img {
+            border-radius: 8px;
+            margin: 10px;
+            width: 280px;
+            height: auto;
+        }
+        
+        .contact-form {
+            background-color: #fff;
+            padding: 40px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            margin: 40px auto;
+            width: 50%;
+            border-radius: 8px;
+        }
+        
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 1.1em;
+        }
+        
+        .contact-form button {
+            background-color: #f7882f;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 1.1em;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+        }
+        
+        .contact-form button:hover {
+            background-color: #e67e22;
+        }
+        
+        .center-text {
+            text-align: center;
+            margin: 0 auto;
+            max-width: 600px;
+            color: #444;
+        }
+        
+        footer {
+            background-color: #6b7a8f;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        footer a {
+            color: white;
+            text-decoration: none;
+            padding: 0 10px;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <h1>Birthday</h1>
+
+    <nav>
+        <div class="logo">
+            <!-- Logo Image (PNG format) -->
+            <img src="logo.png" alt="BirthdayBliss">
+        </div>
+        <div class="nav-links">
+            <!-- Navigation Links -->
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#events">Events</a>
+            <a href="#contact">Contact Us</a>
+            <a href="#meetthedev">Meet the Team</a>
+        </div>
+    </nav>
+
+<header>
+    <h1>Expert Birthday Planning Services</h1>
+    <p>Creating Unforgettable Birthday Celebrations</p>
+    <a href="#contact" class="cta-button">Get In Touch</a>
+</header>
+
+<section>
+    <h2 class="section-title">What We Offer</h2>
+    <div class="services">
+        <div class="service-box">
+            <img src="assets/venue.jpg" alt="Venue Selection">
+            <h3>Venue Selection</h3>
+            <p>Finding the perfect space for your celebration based on your theme and guest count.</p>
+        </div>
+        <div class="service-box">
+            <img src="assets/theme.jpg" alt="Theme Design">
+            <h3>Theme Design</h3>
+            <p>Creating custom birthday themes for any age and personality.</p>
+        </div>
+        <div class="service-box">
+            <img src="assets/vender.jpg" alt="Entertainment & Catering">
+            <h3>Entertainment & Catering</h3>
+            <p>Arranging entertainment, food, and beverages tailored to your preferences.</p>
+        </div>
+        <div class="service-box">
+            <img src="assets/cordi.jpg" alt="Full Event Coordination">
+            <h3>Full Event Coordination</h3>
+            <p>Managing every detail so you can enjoy the celebration stress-free.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2 class="section-title">What Our Clients Say</h2>
+    <div class="testimonials">
+        <blockquote>"The birthday party exceeded all expectations! Everything was perfectly executed from start to finish."</blockquote>
+        <blockquote>"Our child's birthday was magical. The themed decorations and activities were a huge hit with the kids."</blockquote>
+        <blockquote>"The team took care of every detail. It was the most stress-free birthday celebration we've ever had."</blockquote>
+    </div>
+</section>
+
+<section>
+    <h2 class="section-title">Our Birthday Portfolio</h2>
+    <div class="portfolio">
+        <img src="assets/portfolio1.jpg" alt="Birthday 1">
+        <img src="assets/portfolio2.jpg" alt="Birthday 2">
+        <img src="assets/portfolio3.jpg" alt="Birthday 3">
+        <img src="assets/portfolio4.jpg" alt="Birthday 4">
+    </div>
+</section>
+
+<section>
+    <h2 class="section-title">Birthday Planning Packages</h2>
+    <div class="packages">
+        <div class="package-box">
+            <h3>Basic Package</h3>
+            <p>Theme Design + Decoration Setup</p>
+        </div>
+        <div class="package-box">
+            <h3>Standard Package</h3>
+            <p>Basic Package + Venue Coordination + Entertainment</p>
+        </div>
+        <div class="package-box">
+            <h3>Premium Package</h3>
+            <p>All-Inclusive - Custom Theme + Full Planning + Day-of Coordination</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2 class="section-title">Ready to Plan Your Birthday Celebration?</h2>
+    <p class="center-text">Let us help make your special day memorable!</p>
+    <div class="contact-form">
+        <form action="#">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <input type="date" name="birthday-date" required>
+            <textarea name="message" rows="4" placeholder="Tell us about your vision" required></textarea>
+            <button type="submit">Submit Inquiry</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 BirthdayBliss Planning Services. All rights reserved.</p>
+    <a href="#">About Us</a> | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a>
+</footer>
+
 </body>
 </html>
