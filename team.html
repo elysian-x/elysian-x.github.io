@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - Eventify</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: rgba(51, 51, 51, 0.95);
+            padding: 15px 30px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo img {
+            width: 60px;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo img:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin-left: 10px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+        }
+
+        .nav-links a:hover {
+            background-color: #e63946;
+            transform: translateY(-2px);
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 120px 20px 80px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #2a4d6c;
+            margin-bottom: 20px;
+        }
+
+        .section-title p {
+            color: #666;
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .team-member {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+
+        .member-image {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .team-member:hover .member-image img {
+            transform: scale(1.1);
+        }
+
+        .member-info {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .member-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #2a4d6c;
+            margin-bottom: 10px;
+        }
+
+        .member-role {
+            color: #e63946;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .member-description {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .member-contact {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2a4d6c;
+            transition: all 0.3s ease;
+        }
+
+        .contact-icon:hover {
+            background: #e63946;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                padding: 10px 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .member-image {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <img src="eventify.jpg" alt="Eventify Logo">
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="section-title">
+            <h2>Meet Our Team</h2>
+            <p>Our experienced professionals are dedicated to making your events extraordinary</p>
+        </div>
+        <div class="team-grid">
+            <!-- Team Member 1 -->
+            <div class="team-member">
+                <div class="member-image">
+                    <img src="https://source.unsplash.com/400x500/?professional,woman" alt="Neha">
+                </div>
+                <div class="member-info">
+                    <h3 class="member-name">Neha</h3>
+                    <p class="member-role">Creative Director</p>
+                    <p class="member-description">With over 10 years of experience in event design, Sarah brings creativity and innovation to every project.</p>
+                    <div class="member-contact">
+                        <a href="mailto:sarah@eventify.com" class="contact-icon"><i class="fas fa-envelope"></i></a>
+                        <a href="tel:+1234567890" class="contact-icon"><i class="fas fa-phone"></i></a>
+                        <a href="#" class="contact-icon"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div class="team-member">
+                <div class="member-image">
+                    <img src="https://source.unsplash.com/400x500/?professional,man" alt="Haniya">
+                </div>
+                <div class="member-info">
+                    <h3 class="member-name">Haniya</h3>
+                    <p class="member-role">Event Operations Manager</p>
+                    <p class="member-description">Ensures flawless execution of every event with his exceptional organizational skills.</p>
+                    <div class="member-contact">
+                        <a href="mailto:michael@eventify.com" class="contact-icon"><i class="fas fa-envelope"></i></a>
+                        <a href="tel:+1234567891" class="contact-icon"><i class="fas fa-phone"></i></a>
+                        <a href="#" class="contact-icon"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Member 3 -->
+            <div class="team-member">
+                <div class="member-image">
+                    <img src="https://source.unsplash.com/400x500/?professional,woman,indian" alt="Jayanth">
+                </div>
+                <div class="member-info">
+                    <h3 class="member-name">Jayanth</h3>
+                    <p class="member-role">Cultural Events Specialist</p>
+                    <p class="member-description">Specializes in traditional and cultural celebrations, bringing authentic experiences to life.</p>
+                    <div class="member-contact">
+                        <a href="mailto:priya@eventify.com" class="contact-icon"><i class="fas fa-envelope"></i></a>
+                        <a href="tel:+1234567892" class="contact-icon"><i class="fas fa-phone"></i></a>
+                        <a href="#" class="contact-icon"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Member 4 -->
+            <div class="team-member">
+                <div class="member-image">
+                    <img src="https://source.unsplash.com/400x500/?professional,man,indian" alt="Jils">
+                </div>
+                <div class="member-info">
+                    <h3 class="member-name">Jils</h3>
+                    <p class="member-role">Technical Director</p>
+                    <p class="member-description">Handles all technical aspects of events, ensuring perfect lighting, sound, and visual effects.</p>
+                    <div class="member-contact">
+                        <a href="mailto:rajesh@eventify.com" class="contact-icon"><i class="fas fa-envelope"></i></a>
+                        <a href="tel:+1234567893" class="contact-icon"><i class="fas fa-phone"></i></a>
+                        <a href="#" class="contact-icon"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Member 5 -->
+            <div class="team-member">
+                <div class="member-image">
+                    <img src="https://source.unsplash.com/400x500/?professional,woman,asian" alt="Pranav">
+                </div>
+                <div class="member-info">
+                    <h3 class="member-name">Pranav</h3>
+                    <p class="member-role">Catering Manager</p>
+                    <p class="member-description">Creates exceptional culinary experiences with her expertise in food and beverage planning.</p>
+                    <div class="member-contact">
+                        <a href="mailto:emily@eventify.com" class="contact-icon"><i class="fas fa-envelope"></i></a>
+                        <a href="tel:+1234567894" class="contact-icon"><i class="fas fa-phone"></i></a>
+                        <a href="#" class="contact-icon"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Member 6 -->
+            <div class="team-member">
+                <div class="member-image">
+                    <img src="https://source.unsplash.com/400x500/?professional,man,african" alt="Saamit">
+                </div>
+                <div class="member-info">
+                    <h3 class="member-name">Saamit</h3>
+                    <p class="member-role">Client Relations Manager</p>
+                    <p class="member-description">Ensures client satisfaction through excellent communication and personalized service.</p>
+                    <div class="member-contact">
+                        <a href="mailto:david@eventify.com" class="contact-icon"><i class="fas fa-envelope"></i></a>
+                        <a href="tel:+1234567895" class="contact-icon"><i class="fas fa-phone"></i></a>
+                        <a href="#" class="contact-icon"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Member 7 -->
+            <div class="team-member">
+                <div class="member-image">
+                    <img src="https://source.unsplash.com/400x500/?professional,woman,latina" alt="Vishnu S">
+                </div>
+                <div class="member-info">
+                    <h3 class="member-name">Vishnu S</h3>
+                    <p class="member-role">Wedding Specialist</p>
+                    <p class="member-description">Brings passion and creativity to wedding planning, making each ceremony unique and memorable.</p>
+                    <div class="member-contact">
+                        <a href="mailto:maria@eventify.com" class="contact-icon"><i class="fas fa-envelope"></i></a>
+                        <a href="tel:+1234567896" class="contact-icon"><i class="fas fa-phone"></i></a>
+                        <a href="#" class="contact-icon"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
