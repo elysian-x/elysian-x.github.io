@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eventify</title>
+    <title>Eventify - Your Dream Event Partner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         /* Global Styles */
         * {
@@ -13,352 +15,544 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
+            color: #333;
         }
 
         /* Navigation Bar */
         nav {
-            background-color: #333;
-            padding: 10px 20px;
+            background-color: rgba(51, 51, 51, 0.95);
+            padding: 15px 30px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
             display: flex;
-            justify-content: space-between; /* Align logo and links */
+            justify-content: space-between;
             align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        /* Logo Image */
         .logo img {
-            width: 50px; /* Adjust based on your logo size */
+            width: 60px;
             height: auto;
+            transition: transform 0.3s ease;
         }
 
-        /* Navigation Links */
-        nav a {
+        .logo img:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links a {
             color: white;
             text-decoration: none;
             padding: 10px 20px;
             margin-left: 10px;
             font-size: 16px;
+            transition: all 0.3s ease;
+            border-radius: 5px;
         }
 
-        nav a:hover {
-            background-color: #575757;
+        .nav-links a:hover {
+            background-color: #e63946;
+            transform: translateY(-2px);
         }
 
-        /* Header Section */
-        header {
-            background: url('https://via.placeholder.com/1500x500') no-repeat center center/cover;
-            height: 400px;
-            color: white;
-            text-align: center;
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                        url('https://source.unsplash.com/1600x900/?event,celebration') no-repeat center center/cover;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
         }
 
-        header h1 {
-            font-size: 3rem;
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
             margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
         }
 
-        header h2 {
-            font-size: 3rem;
-            margin-bottom: 20px      
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease 0.2s;
+            opacity: 0;
+            animation-fill-mode: forwards;
         }
 
-        header p {
-            font-size: 1.2rem;
-            margin-top: 10px;
-        }
-
-        /* Button to Find Event Planner */
         .find-planner-btn {
             background-color: #e63946;
             color: white;
-            padding: 15px 30px;
-            font-size: 18px;
+            padding: 18px 40px;
+            font-size: 1.2rem;
             text-transform: uppercase;
             border: none;
-            border-radius: 5px;
+            border-radius: 50px;
             cursor: pointer;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: bold;
-            margin-top: 20px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease 0.4s;
+            opacity: 0;
+            animation-fill-mode: forwards;
         }
 
         .find-planner-btn:hover {
             background-color: #d62828;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(230, 57, 70, 0.4);
         }
 
-        section {
-            padding: 40px 20px;
+        /* Services Section */
+        .services {
+            padding: 100px 20px;
+            background-color: #f8f9fa;
         }
 
-        .intro, .services, .testimonials {
+        .section-title {
             text-align: center;
+            margin-bottom: 60px;
         }
 
-        .services .service {
-            display: inline-block;
-            width: 30%;
-            margin: 20px;
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #2a4d6c;
+            margin-bottom: 20px;
         }
 
-        .service img {
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-card img {
             width: 100%;
-            border-radius: 8px;
+            height: 200px;
+            object-fit: cover;
         }
 
+        .service-content {
+            padding: 25px;
+        }
 
-/* Adjust for smaller screens (Mobile View) */
-@media (max-width: 768px) {
-    .testimonial-box {
-        width: 90%; /* Take up more space on smaller screens */
-        margin-bottom: 20px;
-    }
-}
+        .service-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #2a4d6c;
+        }
 
- /* Testimonials Section */
- .testimonials {
-            text-align: center;
-            padding: 40px 20px;
+        /* Testimonials Section */
+        .testimonials {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+        }
+
+        .testimonials .section-title h2 {
+            color: white;
         }
 
         .testimonial-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .testimonial-box {
-            background: #f8f8f8;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 30%;
-            min-width: 280px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
         }
 
         .testimonial-text {
             font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.8;
         }
 
         .testimonial-credentials {
-            font-weight: bold;
-            margin-top: 10px;
+            font-weight: 600;
+            color: #e63946;
         }
 
-/* Optional: Adjust font styles for better readability */
-.testimonial-text {
-    font-style: italic;
-}
+        /* Contact Section */
+        .contact {
+            padding: 100px 20px;
+            background-color: #f8f9fa;
+        }
 
-/* Add spacing between testimonials */
-.testimonial-box:not(:last-child) {
-    margin-bottom: 30px;
-}
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
 
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #e63946;
+            outline: none;
+        }
+
+        .contact-form button {
+            background-color: #e63946;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #d62828;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
         footer {
             background-color: #333;
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 40px 20px;
         }
 
-        footer a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        .contact-form {
-            max-width: 600px;
+        .footer-content {
+            max-width: 1200px;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
         }
 
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        .contact-form button {
-            background-color: #333;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-        }
-
-        .contact-form button:hover {
-            background-color: #575757;
-        }
-        
- /* About Us Section */
- .about-us {
-            padding: 60px 20px;
-            background-color: #f5f5f5;
-            text-align: center;
-        }
-
-        .about-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .about-us h2 {
-            font-size: 2.5rem;
-            color: #2a4d6c;
+        .footer-section h3 {
             font-family: 'Playfair Display', serif;
             margin-bottom: 20px;
         }
 
-        .about-text {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            font-family: 'Merriweather', serif;
-            color: #444;
-            margin-bottom: 20px;
-        }
-
-        .btn-about {
-            display: inline-block;
-            padding: 15px 30px;
-            background-color: #e74c3c;
-            color: white;
-            font-size: 1.1rem;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
             margin-top: 20px;
         }
 
-        .btn-about:hover {
-            background-color: #c0392b;
-            transform: translateY(-5px);
+        .social-links a {
+            color: white;
+            font-size: 20px;
+            transition: color 0.3s ease;
         }
 
-/* Optional: Add responsiveness for mobile devices */
-@media (max-width: 768px) {
-    .about-us {
-        padding: 40px 20px;
-    }
+        .social-links a:hover {
+            color: #e63946;
+        }
 
-    .about-container {
-        padding: 0 15px;
-    }
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-    .about-us h2 {
-        font-size: 2rem; /* Smaller font size for mobile */
-    }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                padding: 10px 20px;
+            }
 
-    .about-text {
-        font-size: 1rem; /* Smaller font size for mobile */
-    }
+            .nav-links {
+                display: none;
+            }
 
-    .btn-about {
-        padding: 12px 25px; /* Adjust button size on mobile */
-        font-size: 1rem;
-    }
-}
+            .hero h1 {
+                font-size: 2.5rem;
+            }
 
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .contact-container {
+                padding: 30px;
+            }
+        }
+
+        /* Map Section Styles */
+        .map-section {
+            padding: 80px 20px;
+            background-color: #f8f9fa;
+        }
+
+        .map-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .map-container iframe {
+            display: block;
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+
+        .location-details {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .location-info {
+            text-align: center;
+        }
+
+        .location-info h3 {
+            font-family: 'Playfair Display', serif;
+            color: #2a4d6c;
+            margin-bottom: 20px;
+        }
+
+        .location-info ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .location-info li {
+            margin: 10px 0;
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        .location-info i {
+            color: #e63946;
+            margin-right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .map-container iframe {
+                height: 350px;
+            }
+            
+            .location-details {
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 <body>
-
     <!-- Navigation Bar -->
     <nav>
         <div class="logo">
-            <!-- Logo Image (PNG format) -->
-            <img src="logo.png" alt="Company Logo">
+            <img src="eventify.jpg" alt="Eventify Logo">
         </div>
         <div class="nav-links">
-            <!-- Navigation Links -->
             <a href="#home">Home</a>
-            <a href="about.html">About</a>
-            <a href="#events">Events</a>
-            <a href="#contact">Contact Us</a>
-            <a href="#meetthedev">Meet the Team</a>
-            
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="team.html">Meet the Team</a>
+            <a href="#contact">Contact</a>
         </div>
     </nav>
 
-    <!-- Header Section -->
-<header id="home">
-    <h1>Welcome to Our Event Agency</h1>
-    <p>Your Dream Event, Our Execution </p>
-    <!-- Event Planner Button (now linking to event-planner.html) -->
-    <a href="event-planner.html">
-        <button class="find-planner-btn">Find your Event Planner</button>
-    </a>
-</header>
-
-
-   <!-- About Us Section -->
-   <section class="about-us">
-    <div class="about-container">
-        <h2>About Us</h2>
-        <p class="about-text">
-            Welcome to <strong>Eventify</strong>, where dreams meet precision, and celebrations become timeless memories. 
-            We are more than just an event agency; we are storytellers, weaving unforgettable experiences tailored to your vision.
-        </p>
-        <p class="about-text">
-            Our passionate team of planners, designers, and coordinators bring creativity and meticulous attention to detail
-            to every occasion—whether it’s an intimate gathering or a grand corporate event. With years of experience and
-            an unyielding commitment to excellence, we transform your ideas into extraordinary moments.
-        </p>
-        <p class="about-text">
-            At <strong>Eventify</strong>, we believe that every event is unique, just like the people behind it. Let us take care of the complexities
-            while you savor every second of your special day. Because here, your vision is our mission.
-        </p>
-        <a href="#contact" class="btn-about">Get in Touch</a>
-    </div>
-</section>
-
-
-<!-- Testimonials Section -->
-<section class="testimonials">
-    <h2>What Our Clients Say</h2>
-    <div class="testimonial-container">
-        <div class="testimonial-box">
-            <p class="testimonial-text">"This agency helped us find our dream home. They were professional and attentive throughout the entire process!"</p>
-            <p class="testimonial-credentials">- Jane D., Homeowner</p>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Create Unforgettable Moments</h1>
+            <p>Your Dream Event, Our Expertise</p>
+            <a href="options.html">
+                <button class="find-planner-btn">Find Your Event Planner</button>
+            </a>
         </div>
-        <div class="testimonial-box">
-            <p class="testimonial-text">"Amazing service! The team went above and beyond to ensure we got the best deal."</p>
-            <p class="testimonial-credentials">- Mark T., Investor</p>
-        </div>
-        <div class="testimonial-box">
-            <p class="testimonial-text">"I am so happy with the new house! The team was very supportive and helped me every step of the way."</p>
-            <p class="testimonial-credentials">- Sarah L., First-time Buyer</p>
-        </div>
-    </div>
-</section>
-
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-form">
-        <h2>Contact Us</h2>
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit">Submit</button>
-        </form>
     </section>
 
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2025 Eventify </p>
-        <p><a href="#home">Back to Top</a></p>
-    </footer>
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-title">
+            <h2>Our Services</h2>
+            <p>We offer comprehensive event planning solutions for every occasion</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="https://source.unsplash.com/800x600/?wedding" alt="Wedding Planning">
+                <div class="service-content">
+                    <h3>Wedding Planning</h3>
+                    <p>Create your perfect day with our expert wedding planning services.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="https://source.unsplash.com/800x600/?corporate" alt="Corporate Events">
+                <div class="service-content">
+                    <h3>Corporate Events</h3>
+                    <p>Professional event planning for your business needs.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="https://source.unsplash.com/800x600/?celebration" alt="Special Occasions">
+                <div class="service-content">
+                    <h3>Special Occasions</h3>
+                    <p>Make your celebrations memorable with our planning expertise.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="section-title">
+            <h2>Client Testimonials</h2>
+            <p>What our clients say about us</p>
+        </div>
+        <div class="testimonial-container">
+            <div class="testimonial-box">
+                <p class="testimonial-text">"Eventify transformed our wedding into a magical experience. Their attention to detail and creativity exceeded our expectations!"</p>
+                <p class="testimonial-credentials">- Sarah & John, Newlyweds</p>
+            </div>
+            <div class="testimonial-box">
+                <p class="testimonial-text">"The team's professionalism and dedication made our corporate event a huge success. Highly recommended!"</p>
+                <p class="testimonial-credentials">- Michael R., CEO</p>
+            </div>
+            <div class="testimonial-box">
+                <p class="testimonial-text">"From start to finish, they handled everything perfectly. Our anniversary celebration was absolutely perfect!"</p>
+                <p class="testimonial-credentials">- Emily & David, Anniversary Celebration</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section" id="location">
+        <div class="section-title">
+            <h2>Our Location</h2>
+            <p>Find us in Kerala, India</p>
+        </div>
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d401673.99999999994!2d75.7805733!3d10.8505159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba860b2d4f8fbd1%3A0x5e0d3095c5718319!2sKerala!5e0!3m2!1sen!2sin!4v1709654321!5m2!1sen!2sin" 
+                width="100%" 
+                height="500" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+        <div class="location-details">
+            <div class="location-info">
+                <h3>Our Office Locations</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Kochi, Kerala</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Thrissur, Kerala</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Palakkad, Kerala</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Thiruvananthapuram, Kerala</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Kozhikode, Kerala</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-title">
+            <h2>Get in Touch</h2>
+            <p>Let's discuss your event planning needs</p>
+        </div>
+        <div class="contact-container">
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="tel" placeholder="Your Phone">
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Eventify</h3>
+                <p>Your trusted partner in creating unforgettable events and celebrations.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="#home">Home</a></p>
+                <p><a href="#services">Services</a></p>
+                <p><a href="#testimonials">Testimonials</a></p>
+                <p><a href="#contact">Contact</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <p style="margin-top: 30px;">&copy; 2025 Eventify. All rights reserved.</p>
+    </footer>
 </body>
 </html>
