@@ -398,13 +398,160 @@
                 padding: 20px;
             }
         }
+
+        /* About Us Section */
+        .about-us {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-us::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: url('https://source.unsplash.com/1600x900/?celebration,event') no-repeat center center/cover;
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-container h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: #2a4d6c;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .about-container h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #e63946;
+            border-radius: 2px;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 25px;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .about-text strong {
+            color: #2a4d6c;
+            font-weight: 600;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #e63946;
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: #2a4d6c;
+            margin-bottom: 15px;
+        }
+
+        .feature-description {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .btn-about {
+            display: inline-block;
+            background: #e63946;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 40px;
+            transition: all 0.3s ease;
+            text-align: center;
+            max-width: 200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-about:hover {
+            background: #d62828;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(230, 57, 70, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .about-container {
+                padding: 30px;
+            }
+
+            .about-container h2 {
+                font-size: 2.2rem;
+            }
+
+            .about-text {
+                font-size: 1rem;
+            }
+
+            .feature-item {
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 <body>
     <!-- Navigation Bar -->
     <nav>
         <div class="logo">
-            <img src="logo.png" alt="Eventify Logo">
+            <img src="eventify.jpg" alt="Eventify Logo">
         </div>
         <div class="nav-links">
             <a href="#home">Home</a>
@@ -477,6 +624,52 @@
                 <p class="testimonial-text">"From start to finish, they handled everything perfectly. Our anniversary celebration was absolutely perfect!"</p>
                 <p class="testimonial-credentials">- Emily & David, Anniversary Celebration</p>
             </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-us" id="about">
+        <div class="about-container">
+            <h2>About Us</h2>
+            <p class="about-text">
+                Welcome to <strong>Eventify</strong>, where dreams meet precision, and celebrations become timeless memories. 
+                We are more than just an event agency; we are storytellers, weaving unforgettable experiences tailored to your vision.
+            </p>
+            <p class="about-text">
+                Our passionate team of planners, designers, and coordinators bring creativity and meticulous attention to detail
+                to every occasion—whether it's an intimate gathering or a grand corporate event. With years of experience and
+                an unyielding commitment to excellence, we transform your ideas into extraordinary moments.
+            </p>
+            <p class="about-text">
+                At <strong>Eventify</strong>, we believe that every event is unique, just like the people behind it. Let us take care of the complexities
+                while you savor every second of your special day. Because here, your vision is our mission.
+            </p>
+            
+            <div class="about-features">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3 class="feature-title">Experience</h3>
+                    <p class="feature-description">Over 10 years of creating memorable events and celebrations.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="feature-title">Passion</h3>
+                    <p class="feature-description">Dedicated to making your special moments truly extraordinary.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="feature-title">Excellence</h3>
+                    <p class="feature-description">Committed to delivering the highest quality service in every detail.</p>
+                </div>
+            </div>
+
+            <a href="#contact" class="btn-about">Get in Touch</a>
         </div>
     </section>
 
