@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Types - Eventify</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #333;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 50px;
+            height: auto;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin-left: 10px;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            background-color: #575757;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .option-button {
+            background: white;
+            border: none;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .option-button:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .option-button img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 15px;
+        }
+
+        .option-button h2 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        .option-button p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .options-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <img src="logo.png" alt="Company Logo">
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="#events">Events</a>
+            <a href="#contact">Contact Us</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Choose Your Event Type</h1>
+        <div class="options-grid">
+            <button class="option-button">
+                <img src="https://img.icons8.com/color/96/000000/wedding.png" alt="Wedding">
+                <a href="wedding.html">
+                <h2>Wedding</h2></a>
+                <p>Create your perfect day with our expert wedding planners</p>
+            </button>
+            <a href="engagement.html">
+            <button href="engagement.html" class="option-button">
+                <img src="https://img.icons8.com/color/96/000000/engagement-ring.png" alt="Engagement">
+                <h2>Engagement</h2>
+                <p>Make your proposal memorable with our special engagement packages</p>
+            </button>
+        </a>
+            <a href="baby.html">
+            <button class="option-button">
+                <img src="https://img.icons8.com/color/96/000000/baby-shower.png" alt="Baby Shower">
+                <h2>Baby Shower</h2>
+                <p>Celebrate the upcoming arrival with a beautiful baby shower</p>
+            </button>
+</a>
+             <a href="baptism.html">
+                <button class="option-button">
+                <img src="https://img.icons8.com/color/96/000000/baptism.png" alt="Baptism">
+                <h2>Baptism</h2>
+                <p>Plan a meaningful baptism ceremony for your little one</p>
+            </button></a>
+            <a href="birthday.html">
+            <button class="option-button">
+                <img src="https://img.icons8.com/color/96/000000/birthday.png" alt="Birthday">
+                <h2>Birthday</h2>
+                <p>Make every birthday special with our customized celebrations</p>
+            </button></a>
+            <a href="funeral.html">
+            <button class="option-button">
+                <img src="https://img.icons8.com/color/96/000000/funeral.png" alt="Funeral">
+                <h2>Funeral</h2>
+                <p>Arrange a dignified and respectful funeral service</p>
+            </button></a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Eventify. All rights reserved.</p>
+        <p><a href="#top">Back to Top</a></p>
+    </footer>
+</body>
+</html>
