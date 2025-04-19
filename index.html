@@ -275,6 +275,15 @@
             font-family: 'Playfair Display', serif;
             margin-bottom: 20px;
         }
+        .footer-section a {
+  color: white;
+  text-decoration: none; /* Optional: removes underline */
+}
+
+.footer-section a:hover {
+  color: #e63946; /* Optional: hover color (can be white too) */
+}
+
 
         .social-links {
             display: flex;
@@ -527,7 +536,11 @@
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(230, 57, 70, 0.4);
         }
-
+        .btn-center {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+    }
         @media (max-width: 768px) {
             .about-container {
                 padding: 30px;
@@ -545,6 +558,8 @@
                 padding: 20px;
             }
         }
+        
+
     </style>
 </head>
 <body>
@@ -668,8 +683,10 @@
                     <p class="feature-description">Committed to delivering the highest quality service in every detail.</p>
                 </div>
             </div>
-
-            <a href="#contact" class="btn-about">Get in Touch</a>
+            <div class="btn-center">
+                <a href="#contact" class="btn-about">Get in Touch</a>
+            </div>
+            
         </div>
     </section>
 
