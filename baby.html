@@ -1,376 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Funeral Planning Services - Event Management</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
-    <style>
-       * {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background-color: #ffffff;
-        }
-
-        nav {
-            position: fixed;
-            width: 100%;
-            top: 0;
-            background-color: #333;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        .logo img {
-            width: 50px;
-            height: auto;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            margin-left: 10px;
-            font-size: 16px;
-        }
-
-        nav a:hover {
-            background-color: #575757;
-        }
-
-        header {
-            background: url('wedding-header.jpg') no-repeat center center/cover;
-            color: #D4AF37;
-            padding: 100px 0;
-            text-align: center;
-        }
-
-        header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5em;
-        }
-
-        header p {
-            font-size: 1.3em;
-            margin-top: 10px;
-        }
-
-        .cta-button {
-            background-color: #aca64c;
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            text-transform: uppercase;
-            font-weight: bold;
-            font-size: 1.1em;
-            cursor: pointer;
-            margin-top: 20px;
-            text-decoration: none;
-        }
-
-        .cta-button:hover {
-            background-color: #908512;
-        }
-
-        .section-title {
-            text-align: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5em;
-            margin: 60px 0 20px;
-        }
-
-        .services, .testimonials, .portfolio, .packages {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin: 40px 0;
-        }
-
-        .service-box, .testimonial-box, .package-box {
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            width: 280px;
-            text-align: center;
-            border-radius: 8px;
-        }
-
-        .service-box img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-
-        .service-box h3, .package-box h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8em;
-            margin: 10px 0;
-        }
-
-        .testimonials {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin: 40px 0;
-        }
-
-        .testimonial-box {
-            background-color: #f9f9f9;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-            padding: 20px;
-            border-radius: 8px;
-            width: 280px;
-            margin: 10px;
-            font-size: 1em;
-            font-style: italic;
-            color: #555;
-        }
-
-        .portfolio img {
-            border-radius: 8px;
-            margin: 10px;
-            width: 220px;
-        }
-
-        .packages .package-box p {
-            font-size: 1.1em;
-            margin: 10px 0;
-        }
-
-        .planner-card {
-            background: white;
-            border-radius: 10px;
-            padding: 40px 20px;
-            margin: 40px auto;
-            width: 90%;
-            max-width: 1200px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .planner-info {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            gap: 20px;
-        }
-
-        .planner-details {
-            width: 280px;
-            background-color: #fffdf7;
-            border: 1px solid #f0e6dc;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
-            text-align: center;
-        }
-
-        .planner-details h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
-
-        .planner-details p {
-            font-size: 1em;
-            margin: 8px 0;
-        }
-
-        .contact-form {
-            background-color: #fff;
-            padding: 40px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            margin: 40px auto;
-            width: 50%;
-            border-radius: 8px;
-        }
-
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border-radius: 8px;
-            border: 1px solid #ddd;
-            font-size: 1.1em;
-        }
-
-        .contact-form button {
-            background-color: #f1c6b4;
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            text-transform: uppercase;
-            font-weight: bold;
-            font-size: 1.1em;
-            cursor: pointer;
-            width: 100%;
-        }
-
-        .contact-form button:hover {
-            background-color: #e8a87c;
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-
-        footer a {
-            color: white;
-            text-decoration: none;
-            padding: 0 10px;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Baby Shower Planning Services - Event Management</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+  <style>
+    /* [Keep all your existing CSS styles here unchanged] */
+  </style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo">
-            <img src="logo.png" alt="Eventify">
-        </div>
-        <div class="nav-links">
-            <a href="index.html#home">Home</a>
-            <a href="index.html#about">About</a>
-            <a href="index.html#events">Events</a>
-            <a href="index.html#contact">Contact Us</a>
-            <a href="team.html">Meet the Team</a>
-        </div>
-    </nav>
-
-    <header>
-        <h1>Compassionate Funeral Services</h1>
-        <p>Honoring Lives with Dignity and Grace</p>
-        <a href="#contact" class="cta-button">Reach Out to Us</a>
-    </header>
-
-    <section>
-        <h2 class="section-title">What We Offer</h2>
-        <div class="services">
-            <div class="service-box">
-                <img src="assets/funeral-venue.jpg" alt="Venue Arrangements">
-                <h3>Venue Arrangements</h3>
-                <p>We help you select peaceful venues for memorial services and ceremonies.</p>
-            </div>
-            <div class="service-box">
-                <img src="assets/funeral-decor.jpg" alt="Floral and Decor">
-                <h3>Floral & Decor</h3>
-                <p>Elegant, respectful floral arrangements and setup to reflect your loved one's life.</p>
-            </div>
-            <div class="service-box">
-                <img src="assets/funeral-coordination.jpg" alt="Full Coordination">
-                <h3>Full Coordination</h3>
-                <p>We take care of all logistics with sensitivity and professionalism.</p>
-            </div>
-            <div class="service-box">
-                <img src="assets/funeral-support.jpg" alt="Family Support">
-                <h3>Family Support</h3>
-                <p>Dedicated assistance to help ease the burden during your time of loss.</p>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <h2 class="section-title">Families We've Helped</h2>
-        <div class="testimonials">
-            <div class="testimonial-box">
-                <blockquote>"They gave my father a beautiful farewell. The care and grace shown were unforgettable."</blockquote>
-            </div>
-            <div class="testimonial-box">
-                <blockquote>"Handled everything with compassion and professionalism. We could focus on our family."</blockquote>
-            </div>
-            <div class="testimonial-box">
-                <blockquote>"A peaceful, respectful ceremony that truly honored our loved one. Forever thankful."</blockquote>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <h2 class="section-title">Memorial Gallery</h2>
-        <div class="portfolio">
-            <img src="assets/funeral1.jpg" alt="Funeral Setup 1">
-            <img src="assets/funeral2.jpg" alt="Funeral Setup 2">
-            <img src="assets/funeral3.jpg" alt="Funeral Setup 3">
-            <img src="assets/funeral4.jpg" alt="Funeral Setup 4">
-        </div>
-    </section>
-
-    <section>
-        <h2 class="section-title">Service Packages</h2>
-        <div class="packages">
-            <div class="package-box">
-                <h3>Essential Farewell</h3>
-                <p>Venue Booking + Basic Floral Decor</p>
-            </div>
-            <div class="package-box">
-                <h3>Classic Tribute</h3>
-                <p>Essential Package + Full Coordination + Support Staff</p>
-            </div>
-            <div class="package-box">
-                <h3>Commemorative Package</h3>
-                <p>All-inclusive: Tribute Design + Live Streaming + Catering Options</p>
-            </div>
-        </div>
-    </section>
-
-    <div class="planner-card">
-        <h2 class="section-title">Meet Our Coordinators</h2>
-        <div class="planner-info">
-            <div class="planner-details">
-                <h3>Angela Moore</h3>
-                <p><strong>Email:</strong> angela@eventifyfuneral.com</p>
-                <p><strong>Phone:</strong> (555) 432-1234</p>
-                <p>Angela brings calm and care to every service she coordinates, with over 10 years of experience.</p>
-            </div>
-            <div class="planner-details">
-                <h3>Daniel Green</h3>
-                <p><strong>Email:</strong> daniel@eventifyfuneral.com</p>
-                <p><strong>Phone:</strong> (555) 543-2109</p>
-                <p>Known for his patience and dedication, Daniel ensures families feel supported at every step.</p>
-            </div>
-            <div class="planner-details">
-                <h3>Olivia Hart</h3>
-                <p><strong>Email:</strong> olivia@eventifyfuneral.com</p>
-                <p><strong>Phone:</strong> (555) 654-3210</p>
-                <p>Olivia specializes in creating peaceful and meaningful memorials with deep attention to detail.</p>
-            </div>
-        </div>
+  <nav>
+    <div class="logo">
+      <img src="logo.png" alt="Eventify">
     </div>
+    <div class="nav-links">
+      <a href="index.html#home">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#events">Events</a>
+      <a href="index.html#contact">Contact Us</a>
+      <a href="team.html">Meet the Team</a>
+    </div>
+  </nav>
 
-    <section id="contact">
-        <h2 class="section-title">We're Here for You</h2>
-        <div class="contact-form">
-            <form action="#">
-                <input type="text" name="name" placeholder="Full Name" required>
-                <input type="email" name="email" placeholder="Email Address" required>
-                <input type="tel" name="phone" placeholder="Phone Number" required>
-                <input type="date" name="service-date" required>
-                <textarea name="message" rows="4" placeholder="How can we assist you?" required></textarea>
-                <button type="submit">Contact Us</button>
-            </form>
-        </div>
-    </section>
+  <header>
+    <h1>Joyful Baby Shower Planning</h1>
+    <p>Celebrating New Beginnings with Love and Delight</p>
+    <a href="#contact" class="cta-button">Let's Plan Together</a>
+  </header>
 
-    <footer>
-        <p>&copy; 2025 Funeral Planning by Eventify. All rights reserved.</p>
-        <a href="#">About Us</a> | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a>
-    </footer>
+  <section>
+    <h2 class="section-title">What We Offer</h2>
+    <div class="services">
+      <div class="service-box">
+        <img src="assets/baby-venue.jpg" alt="Venue Selection">
+        <h3>Charming Venues</h3>
+        <p>Choose the perfect location for an adorable and joyful baby shower.</p>
+      </div>
+      <div class="service-box">
+        <img src="assets/baby-decor.jpg" alt="Decorations">
+        <h3>Themed Decor</h3>
+        <p>Whimsical themes, colorful balloons, and elegant floral arrangements.</p>
+      </div>
+      <div class="service-box">
+        <img src="assets/baby-activities.jpg" alt="Activities">
+        <h3>Fun Activities</h3>
+        <p>Engaging games and sweet traditions to bring laughter and love.</p>
+      </div>
+      <div class="service-box">
+        <img src="assets/baby-catering.jpg" alt="Catering">
+        <h3>Delightful Catering</h3>
+        <p>Customized treats and drinks to suit every palate and baby theme.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Happy Parents Say...</h2>
+    <div class="testimonials">
+      <div class="testimonial-box">
+        <blockquote>"The setup was so cute and touching — everything was perfect down to the last pacifier!"</blockquote>
+      </div>
+      <div class="testimonial-box">
+        <blockquote>"Everyone loved the games and decor! A magical experience for our little one’s big day."</blockquote>
+      </div>
+      <div class="testimonial-box">
+        <blockquote>"It felt warm, welcoming, and joyful. Couldn't have imagined a more perfect celebration."</blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Our Past Celebrations</h2>
+    <div class="portfolio">
+      <img src="assets/baby1.jpg" alt="Baby Shower Setup 1">
+      <img src="assets/baby2.jpg" alt="Baby Shower Setup 2">
+      <img src="assets/baby3.jpg" alt="Baby Shower Setup 3">
+      <img src="assets/baby4.jpg" alt="Baby Shower Setup 4">
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Celebration Packages</h2>
+    <div class="packages">
+      <div class="package-box">
+        <h3>Sweet Beginnings</h3>
+        <p>Venue Setup + Basic Decor + Games</p>
+      </div>
+      <div class="package-box">
+        <h3>Charming Moments</h3>
+        <p>Sweet Beginnings + Catering + Theme Design</p>
+      </div>
+      <div class="package-box">
+        <h3>Ultimate Bundle of Joy</h3>
+        <p>All-inclusive: Invitations + Photographer + Personalized Gifts</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="planner-card">
+    <h2 class="section-title">Meet Your Baby Shower Planners</h2>
+    <div class="planner-info">
+      <div class="planner-details">
+        <h3>Sophie Lane</h3>
+        <p><strong>Email:</strong> sophie@eventifybaby.com</p>
+        <p><strong>Phone:</strong> (555) 123-4567</p>
+        <p>Sophie adds sparkle and love to every baby shower she crafts.</p>
+      </div>
+      <div class="planner-details">
+        <h3>Marcus Ray</h3>
+        <p><strong>Email:</strong> marcus@eventifybaby.com</p>
+        <p><strong>Phone:</strong> (555) 987-6543</p>
+        <p>Marcus ensures every detail is handled with joy and professionalism.</p>
+      </div>
+      <div class="planner-details">
+        <h3>Lily Grace</h3>
+        <p><strong>Email:</strong> lily@eventifybaby.com</p>
+        <p><strong>Phone:</strong> (555) 246-8101</p>
+        <p>Lily brings fresh creativity to themed parties and unique baby games.</p>
+      </div>
+    </div>
+  </div>
+
+  <section id="contact">
+    <h2 class="section-title">Get in Touch</h2>
+    <div class="contact-form">
+      <form action="#">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+        <input type="date" name="event-date" required>
+        <textarea name="message" rows="4" placeholder="Tell us your baby shower dreams..." required></textarea>
+        <button type="submit">Let's Chat</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Baby Shower Planning by Eventify. All rights reserved.</p>
+    <a href="#">About Us</a> | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a>
+  </footer>
 
 </body>
 </html>
-
